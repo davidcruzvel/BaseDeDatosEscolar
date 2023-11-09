@@ -60,13 +60,13 @@ grant select, insert, update, delete on dbo.Calificaciones to Director;
 grant select on dbo.Departamentos to Director;
 grant select on dbo.Municipios to Director;
 grant select on dbo.Distritos to Director;
-
 -- Docentes
 grant select, insert, update, delete on dbo.Direcciones to Docente;
 grant select, insert, update, delete on dbo.Encargados to Docente;
 grant select, insert, update, delete on dbo.Estudiantes to Docente;
 grant select, insert, update, delete on dbo.Matriculas to Docente;
 grant select, insert, update, delete on dbo.Calificaciones to Docente;
+grant select on dbo.Materias to Docente;
 grant select on dbo.Departamentos to Docente;
 grant select on dbo.Municipios to Docente;
 grant select on dbo.Distritos to Docente;
@@ -76,9 +76,12 @@ grant select, insert, update, delete on dbo.Cargos to RRHH;
 grant select, insert, update, delete on dbo.Empleados to RRHH;
 grant select, insert, update, delete on dbo.Especialidades to RRHH;
 grant select, insert, update, delete on dbo.Docentes to RRHH;
+grant select on dbo.Usuarios to RRHH;
+grant select on dbo.Roles to RRHH;
 grant select on dbo.Departamentos to RRHH;
 grant select on dbo.Municipios to RRHH;
 grant select on dbo.Distritos to RRHH;
+
 -- CONSULTAS
 go
 -- Consulta para obtener una lista de logins en la instancia de SQL Server
@@ -89,5 +92,3 @@ select name from sys.database_principals where type_desc = 'SQL_USER';
 go
 -- Consulta para obtener una lista de roles en la instancia de SQL Server
 select name from sys.database_principals where type_desc = 'DATABASE_ROLE';
-
-
